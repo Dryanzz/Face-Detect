@@ -1,0 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html, body {
+  height: 100%;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background-color: #f8f9fa;
+  width: 420px; 
+  margin: 0 auto; 
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.wrapper::-webkit-scrollbar {
+  display: none; /* WebKit browsers */
+}
+
+.header {
+  position: relative;
+  z-index: 10;
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  color: white;
+  padding: 20px 16px;
+  box-shadow: 0 6px 25px rgba(79, 70, 229, 0.2);
+  width: 100%;
+  flex-shrink: 0;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  margin-bottom: -17px;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at center, 
+    rgba(255,255,255,0.1) 0%, 
+    transparent 70%
+  );
+  animation: subtle-shine 5s infinite alternate;
+}
+
+@keyframes subtle-shine {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.header h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 2px 4px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.header h1:hover {
+  transform: scale(1.02);
+  letter-spacing: 0.7px;
+}
+
+.header-description {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  opacity: 0.9;
+  line-height: 1.6;
+  color: #f0f4ff;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.logo-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  padding: 5px 0px;
+  background: transparent;
+}
+
+.ubig-logo {
+  width: 125px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.2));
+  transition: transform 0.3s ease;
+}
+
+.ubig-logo:hover {
+  transform: scale(1.05) rotate(2deg);
+}
+
+.container {
+  width: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  flex-grow: 1;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  background-color: white;
+  z-index: 1; 
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+#video {
+  width: 100%;
+  height: 430px;
+  object-fit: cover;
+  display: block;
+  background-color: #1f2937;
+}
+
+#emotionLabel {
+  position: absolute;
+  top: 30px;
+  left: 10px;
+  color: white;
+  font-size: 14px;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 6px 10px;
+  border-radius: 5px;
+}
+
+.footer {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  color: white;
+}
+
+.advertisement {
+  width: 100%;
+  height: 130px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  position: relative;
+}
+
+.ad-content,
+.ad-video {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  object-position: center;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.footer-info {
+  width: 100%;
+  text-align: center;
+  margin: 10px;
+  background-color: transparent;
+}
+
+.footer-info h2 {
+  font-size: 18px;
+  color: white; /* Warna ungu cerah yang menarik */
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(99, 102, 241, 0.3); /* Efek bayangan lembut */
+}
+
+.footer-info p {
+  font-size: 13px;
+  color: white; /* Warna biru ungu yang dalam */
+  margin: 3px;
+  padding: 0;
+  line-height: 1.2;
+  font-weight: medium;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsif untuk ukuran kecil */
+@media (max-width: 480px) {
+  body {
+    width: 100%;
+  }
+  .header {
+    padding: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+
+  .header h1 {
+    font-size: 20px;
+  }
+
+  .header-description {
+    font-size: 13px;
+  }
+
+  .ubig-logo {
+    width: 100px;
+  }
+  .advertisement {
+    height: 50px;
+  }
+
+  .ad-content,
+  .ad-video {
+    height: 50px;
+  }
+
+  .footer-info h2 {
+    font-size: 14px;
+  }
+  
+  .footer-info p {
+    font-size: 10px;
+  }
+}
+

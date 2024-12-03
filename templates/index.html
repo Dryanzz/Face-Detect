@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bahagiameter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="header-content">
+                <div class="header-left">
+                    <div class="logo-container">
+                        <img src="static/images/logo-white.png" alt="UBIG Logo" class="ubig-logo">
+                    </div>
+                    <div class="header-description">Yuk kita cek wajah kamu hari ini!</div>
+                    <h1>BahagiaMeter</h1>
+                </div>
+            </div>
+        </div>
+    
+        <div class="container">
+            <div class="video-container">
+                <video id="video" autoplay muted></video>
+                <div id="emotionLabel">
+                    Bagaimana hari ini 
+                </div>
+            </div>
+    
+            <div class="footer"> 
+                <div class="advertisement">
+                    <!-- Iklan Gambar Pertama (10 detik) -->
+                    <img id="adImage1" class="ad-content" src="static/images/iklan1.jpg" alt="Iklan Gambar 1">
+                    
+                    <!-- Iklan Gambar Kedua (10 detik) -->
+                    <img id="adImage2" class="ad-content" src="static/images/iklan2.jpg" alt="Iklan Gambar 2">
+                    
+                    <!-- Iklan Gambar Ketiga (10 detik) -->
+                    <img id="adImage3" class="ad-content" src="static/images/iklan3.jpg" alt="Iklan Gambar 3">
+                </div>
+                <div class="footer-info">
+                    <h2>SPACE IKLAN</h2>
+                    <p>DISEWAKAN</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.1/socket.io.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/face-api.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/ad-rotation.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}"></script>
+</body>
+</html>
